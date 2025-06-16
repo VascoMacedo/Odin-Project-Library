@@ -17,9 +17,51 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
+//------------------------------------------------------
+
+function loopLibrary(){
+  myLibrary.forEach(function(book) {
+    console.log(book);
+    displayBook(book);
+  });
+}
+
+//......................................................
+
+function displayBook(book) {
+  const container = document.querySelector("#container");
+  console.log("Container:")
+  console.log(container);
+  // selects the first child of #container => .display
+  const div = document.createElement("div");
+  div.textContent = `T: ${book.title}; A: ${book.author}; P: ${book.pages}; R: ${book.read};`;
+  container.appendChild(div);
+}
+
+//......................................................
 
 const book1 = new Book('steve', 'X', 69, 'read');
 console.log(book1);
 
+const book2 = new Book('also steve', 'xX', 169, 'not read yet');
+console.log(book2);
+
+const book3 = new Book('not steve', 'XXX', 269, 'read');
+console.log(book3);
+
+const book4 = new Book('not steve 4', 'XXX4', 2694, 'read 4');
+console.log(book4);
+
 addBookToLibrary(book1);
+addBookToLibrary(book2);
+addBookToLibrary(book3);
+addBookToLibrary(book4);
+
+/*
+displayBook(book1);
+displayBook(book2);
+
 console.log(myLibrary);
+*/
+
+loopLibrary();
