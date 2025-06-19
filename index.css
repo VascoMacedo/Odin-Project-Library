@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;    
+}
+
+body {
+  height: 100%;
+}
+
 #container div {
   background-color: #FFFFFF;
   color: black;
@@ -14,7 +23,7 @@
   grid-template-columns: 1fr 4fr;
   gap: 4px;    
   grid-template-rows: 1fr;
-  height: 1vh;
+  height: 100vh;
 }
 
 
@@ -31,15 +40,39 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  
   gap: 20px;  
 
-  height: 80vh;
+  height: 85vh;
   background-color: blueviolet;
 }
 
 .sidebar-Container{
+  /*
   display: grid;
   grid-template-rows: 5fr 3fr;
   grid-column: 1 / 2;
   grid-row: 1 / 4;
-  gap: 15px;    
-  background-color: rgb(43, 116, 226);
+  gap: 15px;
+  */    
+  background-color: rgb(43, 116, 226);  
+}
+
+.sidebar-Container input{
+  size: 40px;
+  padding: 10px;
+}
+
+.sidebar-Container h2{
+  border: 4px dotted black;
+  padding: 10px;
+}
+
+.sidebar-Container p{
+  margin: 5px;
+  padding: 5px;
+}
+
+.sidebar-Container button{
+  size: 20px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
