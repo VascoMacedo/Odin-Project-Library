@@ -33,9 +33,11 @@ function createBookFromForm(){
       }
   }
   //form.style.display = 'none';
-  myLibrary.push(new Book(title, author, pages, isRead))
+  let lastBook = new Book(title, author, pages, isRead);
+  myLibrary.push(lastBook);
   //cardBuilder();
-  loopLibrary();
+  //loopLibrary();
+  displayBook(lastBook);
 }
 
 
