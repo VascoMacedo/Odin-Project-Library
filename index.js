@@ -17,6 +17,28 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
+// Create BOOK From Form
+function createBookFromForm(){
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  const pages = document.getElementById('pages').value;
+  const radioButtons = document.getElementsByName('isRead');
+
+  let isRead = '';
+
+  for (let i = 0; i < radioButtons.length; i++) {  //check for radio button selected using `.checked`
+      if (radioButtons[i].checked) {
+      isRead = radioButtons[i].value;
+      break; // Exit loop after finding the selected radio button
+      }
+  }
+  //form.style.display = 'none';
+  myLibrary.push(new Book(title, author, pages, isRead))
+  //cardBuilder();
+  loopLibrary();
+}
+
+
 //------------------------------------------------------
 
 function loopLibrary(){
