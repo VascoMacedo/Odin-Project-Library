@@ -54,12 +54,21 @@ function loopLibrary(){
 
 function displayBook(book) {
   const container = document.querySelector("#container");
-  console.log("Container:")
-  console.log(container);
+  container.innerHTML += 
+  ` 
+  <div>
+    <p>Title: ${book.title}</p>
+    <p>Author: ${book.author}</p>
+    <p>Pages: ${book.pages}</p>
+    <p>Status: ${book.read}</p>
+    
+    <button class='btn' id="del" onclick="deleteBook('${book.Id}')">Delete</button>
+  </div>
+  `
   // selects the first child of #container => .display
-  const div = document.createElement("div");
+  /*const div = document.createElement("div");
   div.textContent = `T: ${book.title}; A: ${book.author}; P: ${book.pages}; R: ${book.read};`;
-  container.appendChild(div);
+  container.appendChild(div);*/
 }
 
 //......................................................
