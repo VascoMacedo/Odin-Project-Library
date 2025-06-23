@@ -51,7 +51,37 @@ function loopLibrary(){
 }
 
 //......................................................
+function deleteBook(bookId){
+  let count = 0;
+  console.log("Inside Delete Function")
 
+  myLibrary.forEach(function(book) {    
+    if(book.id == bookId){
+      //console.log(`Delete this Book: ${book.title} , Book ID: ${bookId} !!!`);
+      console.log(book);
+      myLibrary.splice(count, 1);      
+    }
+    count++;
+    //console.log(book);    
+  });
+  console.log(myLibrary);
+
+  resetDisplayBook();
+  reDrawDisplayBook();
+}
+
+//......................................................
+function reDrawDisplayBook(){
+  myLibrary.forEach(function(book) {
+    displayBook(book);
+  });
+}
+//......................................................
+function resetDisplayBook(){
+  const container = document.querySelector("#container");
+  container.innerHTML = ``;
+}
+//......................................................
 function displayBook(book) {
   const container = document.querySelector("#container");
   container.innerHTML += 
@@ -62,7 +92,7 @@ function displayBook(book) {
     <p>Pages: ${book.pages}</p>
     <p>Status: ${book.read}</p>
     
-    <button class='btn' id="del" onclick="deleteBook('${book.Id}')">Delete</button>
+    <button class='btn' id="del" onclick="deleteBook('${book.id}')">Delete</button>
   </div>
   `
   // selects the first child of #container => .display
