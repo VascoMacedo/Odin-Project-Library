@@ -69,7 +69,23 @@ function deleteBook(bookId){
   resetDisplayBook();
   reDrawDisplayBook();
 }
+//......................................................
+function editReadStatus(bookId){
+  myLibrary.forEach(function(book) {
+    console.log(book);
+    if(book.id == bookId){
+      if(book.read == "read"){
+        book.read = "not read yet";
+      }else{
+        book.read = "read";
+      }
+    }
+    console.log(book);    
+  });
 
+  resetDisplayBook();
+  reDrawDisplayBook();
+}
 //......................................................
 function reDrawDisplayBook(){
   myLibrary.forEach(function(book) {
@@ -93,6 +109,7 @@ function displayBook(book) {
     <p>Status: ${book.read}</p>
     
     <button class='btn' id="del" onclick="deleteBook('${book.id}')">Delete</button>
+    <button class='btn' id="edit" onclick="editReadStatus('${book.id}')">Edit Read Status</button>
   </div>
   `
   // selects the first child of #container => .display
